@@ -1,0 +1,90 @@
+Synonyms:
+Nick names to objects to make them handy/easy to call.
+employees-India---- empIN
+employees-USA-----empUS
+
+Synonynms can be used on any object.
+
+2types:
+1) Private synonym: it is available only to the user who created it.
+2) Public synonym: it is available to all users of the schema
+
+------------------------------------------------------------
+Sequences:
+Employee table--- empid: the values for the columns must be auto generated.
+
+
+start with value
+increment/decrement by  value
+cycle
+
+Mobile shop----
+Cache in sequence:
+
+5
+
+user 1			user 2		user3		user 4
+11111			11161
+
+11121			11171
+
+11131			11181
+
+11141			11191
+
+11151			11101
+
+
+----------------------------------------------------------------
+Indexes:
+Indexes are objects in the database which dramatically improves the database performance while searching or ordering of the data in the table.
+
+Clustered: With primary key a clustered index is automatically created and there can be only one clustered index per table.
+
+If you want a unique index that can be created and utilised, its similar to clustered index only difference is it allows null value.
+NonClustered: There can be multiple non clustered indexes per table.
+Composite Index: Its a combination of more than 2 keys/columns on which index is composed.
+
+
+When changes are made on the index column the index is re-created again on that column which is a overhead to oracle engine.
+
+Unnecessary indexes make the searching and sorting slower, so indexes wisely.
+
+Indexes are to be created on columns which are frequently used in the where clause of the select query and similarly on the columns
+used in the order clause of the query.
+------------------------------------------------------------------------
+Joins:
+Joins are used when the data is scattered over tables.
+Join will bring the data together only for the query and the data in the table will not be touched/restructured.
+To create a join we need a common column between the tables to be joined.
+Any number of tables can be joined.
+The condition on which the join is created is called a "Joining condition" and the resultant table is called "Join"
+Types of Join:
+1) Equi Join/Natural Join/Inner Join
+         =/natural join/ inner join
+select employee_id,concat(first_name,last_name),e.department_id, department_name
+from  employees e  , departments d 
+on e.department_id=d.department_id
+/
+
+select employee_id,concat(first_name,last_name),department_id,department_name
+from  employees  natural join departments 
+
+/
+
+
+
+select employee_id,concat(first_name,last_name),e.department_id,department_name
+from  employees e  inner join departments d 
+on e.department_id=d.department_id
+/
+
+
+
+2) Non Equi Join: other than = operator
+3) Cartesian Join: product of 2 or more tables/permutations and combinations of data in the table
+4) Outer Joins:  They are forced joins, which means that the data may be absent in either tables, but that should be explicitly listed.
+
+Types of Outer Joins:Left/Right/Full
+
+
