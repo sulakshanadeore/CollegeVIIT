@@ -88,3 +88,24 @@ on e.department_id=d.department_id
 Types of Outer Joins:Left/Right/Full
 
 
+Cartesian Join: Product of two or more tables.
+Used to find the permutations and combinations of one row of first table to all rows of the second table.
+Example: Emp :10 rows
+                Dept: 5 rows
+
+50(10*5)
+-------------------------------------------------------------------
+Self Join: means the data is hidden in the same table
+
+student_id
+student_name
+crid
+---------------------------------------------------------------------
+Outer Joins:
+used to retrieve data from two or more tables whether they may not have a match in one of the tables.
+LEFT OUTER JOIN :returns all rows from the left table and matching rows from the right table. If there is no match, the result will contain null values from the right table columns
+RIGHT OUTER JOIN:
+returns all rows from the right table and matching rows from the left table. If there is no match, the result will contain null values from the left table columns
+FULL OUTER JOIN: return all the rows from both the tables, with null values in the columns where there are not matches.ed
+
+
